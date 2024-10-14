@@ -26,7 +26,7 @@ public class AutenticacionController {
     public LoginResponseDTO login(@RequestBody LoginRequestDTO loginRequestDTO){
 
         try {
-            Thread.sleep(Duration.ofSeconds(5));
+            Thread.sleep(Duration.ofSeconds(1));
             String[] datosUsuario = autenticacionService.validarUsuario(loginRequestDTO);
 
             if (datosUsuario == null) {
@@ -45,7 +45,7 @@ public class AutenticacionController {
     public LogoutResponseDTO logout(@RequestBody String nombreUsuario) {
 
         try {
-            Thread.sleep(Duration.ofSeconds(1));
+            Thread.sleep(Duration.ofSeconds(3));
             boolean logout = autenticacionService.cerrarSesionUsuario(nombreUsuario);
 
             if (!logout) {
